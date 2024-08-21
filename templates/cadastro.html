@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Cadastro de Produto</title>
+</head>
+<body>
+    <h1>Cadastro de Produto</h1>
+    <form method="POST" action="{{ url_for('cadastro_produto') }}">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+        <label for="codigo_barras">Código de Barras:</label>
+        <input type="number" id="codigo_barras" name="codigo_barras"><br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" required><br>
+        <input type="submit" value="Cadastrar">
+    </form>
+    <a href="{{ url_for('listar_produtos') }}">Listar Produtos</a>
+    <a href="{{ url_for('exibir_index') }}" class="btn">Pagina Inicial</a>
+    <a href="{{ url_for('selecionar_produto_atualizar') }}" class="btn">Atualizar Produtos</a>
+</body>
+</html>
