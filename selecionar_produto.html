@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Selecionar Produto para Atualizar</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Selecionar Produto para Atualizar</h1>
+        <form method="POST" action="{{ url_for('selecionar_produto_atualizar') }}">
+            <select id="produto" name="produto_id">
+                <option value="">Selecione um produto</option>
+                {% for produto in produtos %}
+                    <option value="{{ produto.id }}">{{ produto.nome }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Atualizar Produto">
+        </form>
+        <a href="{{ url_for('exibir_index') }}">Pagina Inicial</a>
+    </div>
+</body>
+</html>
